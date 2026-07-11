@@ -1,0 +1,27 @@
+# Credentials - NEVER push
+config.env
+.env
+
+# Screenshots - personal debug files
+debug_*.png
+debug_*.html
+
+# Excel data files - patient data
+*.xlsx
+*.xls
+!sample.xlsx
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# WebDriver
+.wdm/
+drivers/
+
+# Logs
+*.log
+
+# Browser temp data
+*.crdownload
