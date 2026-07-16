@@ -1051,21 +1051,16 @@ def process_row(driver, record, row_num):
     village_filled = False
     village_name = village if village else "Bermi"
 
-    for attempt in range(3):
+    for attempt in range(2):
         if fill_vselect(driver, "Village", village_name):
             village_filled = True
             break
         log.warning(f"  Village '{village_name}' attempt {attempt+1} failed, retrying...")
         time.sleep(1)
 
-    # Agar original village nahi mila toh default Bermi try karo
-    if not village_filled and village and village.lower() != "bermi":
-        log.warning(f"  Village '{village}' not found, trying default: Bermi")
-        if fill_vselect(driver, "Village", "Bermi"):
-            village_filled = True
-
     if not village_filled:
-        log.warning("  Village could not be filled")
+        log.warning(f"  Village '{village}' not found, using default: Bermi")
+        fill_vselect(driver, "Village", "Bermi")
 
     submit_form(driver)
     time.sleep(5)
