@@ -1068,8 +1068,7 @@ def process_row(driver, record, row_num):
         log.warning("  Village could not be filled")
 
     submit_form(driver)
-    time.sleep(0.5)
-    cancel_abha_popup(driver)
+    time.sleep(2)
     go_to_enrollment(driver)
 
 
