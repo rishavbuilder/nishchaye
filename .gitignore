@@ -10,6 +10,7 @@ debug_*.html
 *.xlsx
 *.xls
 !sample.xlsx
+.~lock.*
 
 # Python
 __pycache__/
